@@ -128,6 +128,13 @@
 #include <mach/perflock.h>
 #endif
 
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_2_PHASE
+int set_two_phase_freq_badass(int cpufreq);
+#endif
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE
+int set_three_phase_freq_badass(int cpufreq);
+#endif
+
 extern unsigned int engineerid; // bit 0
 
 #define HW_VER_ID_VIRT		(MSM_TLMM_BASE + 0x00002054)
@@ -3664,6 +3671,13 @@ static void __init ville_init(void)
 	msm_spm_init(msm_spm_data, ARRAY_SIZE(msm_spm_data));
 	msm_spm_l2_init(msm_spm_l2_data);
 	msm8960_init_buses();
+
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_2_PHASE
+       set_two_phase_freq_badass(CONFIG_CPU_FREQ_GOV_BADASS_2_PHASE_FREQ);
+#endif
+#ifdef CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE
+       set_three_phase_freq_badass(CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE_FREQ);
+#endif
 
 	ville_cable_detect_register();
 
