@@ -1603,6 +1603,12 @@ config CPU_UNDERCLOCK
 	help
 	  Enable CPU underclock for Krait S4 socs
 
+config CPU_OVERCLOCK
+	bool "Enable CPU Overclocking"
+	default n
+	help
+	  Enable CPU overclock for Krait S4 socs
+
 config CPU_VOLTAGE_TABLE
 	bool "Enable CPU Voltage Table via sysfs for adjustements"
 	default n

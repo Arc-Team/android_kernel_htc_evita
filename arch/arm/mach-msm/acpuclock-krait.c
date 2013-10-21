@@ -955,7 +955,7 @@ static void __init bus_init(const struct l2_level *l2_level)
 #ifdef CONFIG_CPU_VOLTAGE_TABLE
 
 #define HFPLL_MIN_VDD		 700000
-#define HFPLL_MAX_VDD		1350000
+#define HFPLL_MAX_VDD		1450000
 
 ssize_t acpuclk_get_vdd_levels_str(char *buf) {
 
@@ -1121,6 +1121,7 @@ static const int __init krait_needs_vmin(void)
 
 static void __init krait_apply_vmin(struct acpu_level *tbl)
 {
+	printk(KERN_INFO "[vmin]Applying vmin voltage\n" );
 	for (; tbl->speed.khz != 0; tbl++) {
 		if (tbl->vdd_core < 1150000)
 			tbl->vdd_core = 1150000;
