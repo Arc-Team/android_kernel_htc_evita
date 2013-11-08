@@ -1614,6 +1614,14 @@ config MSM_CPU_AVS
 	  in Qualcomm ARMv7 CPUs. It adjusts the voltage for each frequency
 	  based on feedback from three ring oscillators in the CPU.
 
+config BYPASS_KRAIT_NEEDS_VMIN
+	bool "bypass qualcomm Vmin patch"
+	default n
+	help
+	  qualcomm force all frequencies to 1150mv for some chipset
+	  to improve stability. if you say "Y" stock voltage table 
+	  will be used
+
 config GPU_VOLTAGE_TABLE
 	bool "Enable GPU Voltage Table via sysfs for adjustements"
 	default n
