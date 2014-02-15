@@ -3929,6 +3929,12 @@ static int sock_has_perm(struct task_struct *task, struct sock *sk, u32 perms)
 	if (sksec->sid == SECINITSID_KERNEL)
 		return 0;
 
+	if (unlikely(!sksec))
+	{
+		pr_debug(KERN_CRIT "[SELinux] sksec is NULL, socket is already freed. \n");
+		return -EINVAL;
+	}
+
 	COMMON_AUDIT_DATA_INIT(&ad, NET);
 	ad.selinux_audit_data = &sad;
 	ad.u.net = &net;
