@@ -4,6 +4,8 @@
 
 # Each configuration option enables a list of files.
 
+CFLAGS_KERNEL := -fno-strict-aliasing
+
 wm97xx-ts-y := wm97xx-core.o
 
 obj-$(CONFIG_TOUCHSCREEN_88PM860X)	+= 88pm860x-ts.o

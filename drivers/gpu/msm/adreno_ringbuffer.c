@@ -248,7 +248,15 @@ err:
 	return ret;
 }
 
-
+/**
+ * adreno_ringbuffer_load_pm4_ucode() - Load pm4 ucode
+ * @device: Pointer to a KGSL device
+ * @start: Starting index in pm4 ucode to load
+ * @end: Ending index of pm4 ucode to load
+ * @addr: Address to load the pm4 ucode
+ *
+ * Load the pm4 ucode from @start at @addr.
+ */
 int adreno_ringbuffer_load_pm4_ucode(struct kgsl_device *device)
 {
 	struct adreno_device *adreno_dev = ADRENO_DEVICE(device);
@@ -303,6 +311,15 @@ err:
 	return ret;
 }
 
+/**
+ * adreno_ringbuffer_load_pfp_ucode() - Load pfp ucode
+ * @device: Pointer to a KGSL device
+ * @start: Starting index in pfp ucode to load
+ * @end: Ending index of pfp ucode to load
+ * @addr: Address to load the pfp ucode
+ *
+ * Load the pfp ucode from @start at @addr.
+ */
 int adreno_ringbuffer_load_pfp_ucode(struct kgsl_device *device)
 {
 	struct adreno_device *adreno_dev = ADRENO_DEVICE(device);

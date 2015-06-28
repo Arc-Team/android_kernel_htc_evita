@@ -3,6 +3,8 @@ ifeq ($(GCC_VERSION),0404)
 CFLAGS_REMOVE_msm_vfe8x.o = -Wframe-larger-than=1024
 endif
 
+CFLAGS_KERNEL := -fno-strict-aliasing -Os
+
 ifeq ($(CONFIG_MSM_CAMERA_V4L2),y)
   EXTRA_CFLAGS += -Idrivers/media/video/msm/csi
   EXTRA_CFLAGS += -Idrivers/media/video/msm/io
