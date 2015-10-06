@@ -4526,7 +4526,7 @@ static void __init elite_init(void)
 	set_three_phase_freq_badass(CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE_FREQ);
 #endif
 #ifdef CONFIG_CPU_FREQ_GOV_UBERDEMAND
-	set_second_phase_freq(1728000);
+	set_second_phase_freq(CONFIG_CPU_FREQ_GOV_UBERDEMAND_SECOND_PHASE_FREQ);
 #endif
 
 	elite_cable_detect_register();
