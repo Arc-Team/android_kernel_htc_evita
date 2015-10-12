@@ -138,6 +138,9 @@ int set_two_phase_freq_badass(int cpufreq);
 #ifdef CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE
 int set_three_phase_freq_badass(int cpufreq);
 #endif
+#ifdef CONFIG_CPU_FREQ_GOV_UBERDEMAND
+int set_second_phase_freq(int cpufreq);
+#endif
 
 extern unsigned int engineerid; // bit 0
 
@@ -4521,6 +4524,9 @@ static void __init elite_init(void)
 #endif
 #ifdef CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE
 	set_three_phase_freq_badass(CONFIG_CPU_FREQ_GOV_BADASS_3_PHASE_FREQ);
+#endif
+#ifdef CONFIG_CPU_FREQ_GOV_UBERDEMAND
+	set_second_phase_freq(1728000);
 #endif
 
 	elite_cable_detect_register();
