@@ -251,8 +251,8 @@ MODULE       = -DMODULE
 MODEXTRA     = -fno-pic
 HOSTCC       = gcc
 HOSTCXX      = g++
-HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes $(O3) $(GRAPHITE)
-HOSTCXXFLAGS = $(O3) $(GRAPHITE)
+HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes $(O3)
+HOSTCXXFLAGS = $(O3)
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -353,11 +353,11 @@ CHECK		= sparse
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
-CFLAGS_MODULE   = $(MODULE) $(MODEXTRA) $(O3) $(GRAPHITE)
-AFLAGS_MODULE   = $(MODULE) $(O3) $(GRAPHITE)
+CFLAGS_MODULE   = $(MODULE) $(MODEXTRA) $(O3)
+AFLAGS_MODULE   = $(MODULE) $(O3)
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	= $(O3) $(GRAPHITE)
-AFLAGS_KERNEL	= $(O3) $(GRAPHITE)
+CFLAGS_KERNEL	= $(O3)
+AFLAGS_KERNEL	= $(O3)
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
 
@@ -564,13 +564,13 @@ endif # $(dot-config)
 all: vmlinux
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-KBUILD_CFLAGS	+= -Os $(GRAPHITE)
+KBUILD_CFLAGS	+= -Os
 endif
 ifdef CONFIG_CC_OPTIMIZE_DEFAULT
-KBUILD_CFLAGS	+= -O2 $(GRAPHITE)
+KBUILD_CFLAGS	+= -O2
 endif
 ifdef CONFIG_CC_OPTIMIZE_ALOT
-KBUILD_CFLAGS	+= $(O3) $(GRAPHITE)
+KBUILD_CFLAGS	+= $(O3)
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
