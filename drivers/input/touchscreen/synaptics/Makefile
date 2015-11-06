@@ -1,4 +1,3 @@
-CFLAGS_KERNEL := -fno-strict-aliasing
 CFLAGS_rmi_bus.o := -DDEBUG
 CFLAGS_rmi_sensor.o := -DDEBUG
 CFLAGS_rmi_function.o := -DDEBUG
