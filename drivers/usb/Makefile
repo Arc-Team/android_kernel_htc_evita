@@ -2,8 +2,6 @@
 # Makefile for the kernel USB device drivers.
 #
 
-CFLAGS_KERNEL := -fno-strict-aliasing
-
 # Object files in subdirectories
 
 obj-$(CONFIG_USB)		+= core/

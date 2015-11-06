@@ -1,5 +1,3 @@
-CFLAGS_KERNEL := -fno-strict-aliasing
-
 obj-y			+= drm/ vga/ stub/ ion/
 ifeq ($(CONFIG_ARCH_APQ8064),y)
 obj-$(CONFIG_MSM_KGSL)	+= msm2/

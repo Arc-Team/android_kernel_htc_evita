@@ -246,7 +246,7 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 GRAPHITE     = -fgraphite -fgraphite-identity -floop-flatten -floop-parallelize-all \
                -ftree-loop-linear -floop-interchange -floop-strip-mine -floop-block
 LTO          = -flto -fuse-linker-plugin
-O3           = -O3 -Wno-array-bounds
+O3           = -O3
 MODULE       = -DMODULE
 MODEXTRA     = -fno-pic
 HOSTCC       = gcc
