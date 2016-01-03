@@ -3,6 +3,8 @@
 #
 #
 
+CFLAGS_KERNEL := -Os
+
 # MPU
 obj-$(CONFIG_MPU_SENSORS_MPU3050)	+= mpu3050.o
 mpu3050-objs += mpuirq.o \
